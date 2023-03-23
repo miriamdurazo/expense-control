@@ -1,5 +1,11 @@
+// React app
 import React from 'react';
-import Navbar from './components/Navbar.js';
+
+// Components
+import { Navbar } from './components/Navbar';
+
+//Style
+import './index.css';
 
 function App() {
   return (
@@ -11,7 +17,7 @@ function App() {
         </p>
         
       </header>
-    </div>
+      </div>
   );
 }
 
