@@ -90,9 +90,17 @@ nav {
 
 /* Hero - start section */
 
-.hero {
-  width: auto;
-  height: 500px;
+.hero-row {
+  max-width: 100%;
+  display: flex;
+  justify-content:center;
+  align-items:flex-end;
+}
+
+#heroImg {
+  margin-top: 5.5rem;
+  max-width: 49%;
+  background-size:cover;
 }
 
 /* Hero - end section */
@@ -147,6 +155,7 @@ nav {
   line-height: 15px;
   margin: 2px 0;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 .resources-link:hover,
