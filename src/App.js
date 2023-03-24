@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Wrapper } from './components/Wrapper';
 import { Footer } from './components/Footer';
+import { Hero } from './components/Hero';
 
 // Pages
 import { Home } from './pages/Home';
@@ -20,6 +21,7 @@ function App() {
     <Router>
       <div>
         <Navbar />
+        <Hero />
         <Wrapper>
           <Routes>
             <Route path = "/" element = { <Home /> } />
