@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+// import ExpensesGraph from "./ExpensesGraph.js";
+import PracticeGraph from "./PracticeGraph.js";
 
 const ExpensesCategories = () => {
    
@@ -24,6 +26,12 @@ const ExpensesCategories = () => {
     setExpenses({ ...expenses, [category]: expense });
   };
 
+  // Handle submit expenses
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(expenses);
+  }
+
   // function to handle select month change
   const handleMonthChange = (e) => {
     setSelectedMonth(e.target.value);
@@ -31,7 +39,7 @@ const ExpensesCategories = () => {
 
   // function to calculate total expenses
   const totalExpenses = Object.values(expenses).reduce(
-    (total, expense) => total + expense
+    (total, expense) => parseFloat(total) + parseFloat(expense)
   );
 
   // render function
@@ -45,6 +53,7 @@ const ExpensesCategories = () => {
         <option value="March">March</option>
         {/* add more months as needed */}
       </select>
+      
       <table>
         <thead>
           <tr>
@@ -60,7 +69,7 @@ const ExpensesCategories = () => {
                 <input
                   type="number"
                   value={expense}
-                  onChange={(e) => updateExpense(category, e.target.value)}
+                  onChange={(e) => updateExpense(category, parseFloat(e.target.value))}
                 />
               </td>
             </tr>
@@ -71,6 +80,9 @@ const ExpensesCategories = () => {
           </tr>
         </tbody>
       </table>
+      
+      
+      <PracticeGraph expenses={expenses}/>
     </div>
   );
 };

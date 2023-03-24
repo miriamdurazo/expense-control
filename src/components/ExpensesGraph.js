@@ -1,8 +1,11 @@
-import React from "react";
-import Chart from "chart.js/auto";
+import React, { useState } from "react";
+// import Chart from "chart.js/auto";
+import { Bar } from "react-chartjs-2";
 
 const ExpensesGraph = ({ expenses }) => {
+  const [data, setData] = useState({});
   // function to get expenses data in the required format for Chart.js
+  console.log(expenses);
   const getChartData = () => {
     const categories = Object.keys(expenses);
     const data = Object.values(expenses);
@@ -41,38 +44,38 @@ const ExpensesGraph = ({ expenses }) => {
   };
 
   // function to create the Chart.js chart
-  const createChart = () => {
-    const chartData = getChartData();
-    const ctx = document.getElementById("expensesChart").getContext("2d");
-    new Chart(ctx, {
-      type: "bar",
-      data: chartData,
-      options: {
-        scales: {
-          yAxes: [
-            {
-              ticks: {
-                beginAtZero: true
-              }
-            }
-          ]
-        }
-      }
-    });
-  };
+  // const createChart = () => {
+  //   const chartData = getChartData();
+  //   const ctx = document.getElementById("expensesChart2").getContext("2d");
+  //   new Chart(ctx, {
+  //     type: "bar",
+  //     data: chartData,
+  //     options: {
+  //       scales: {
+  //         yAxes: [
+  //           {
+  //             ticks: {
+  //               beginAtZero: true
+  //             }
+  //           }
+  //         ]
+  //       }
+  //     }
+  //   });
+  // };
 
   // call createChart function when component mounts
-  React.useEffect(() => {
-    createChart();
-  }, []);
+  // React.useEffect(() => {
+  //   setData(getChartData());
+  //   // createChart();
+  // }, []);
 
   // render the chart canvas
-  return (
-    <div>
-      <h2>Expenses by Category</h2>
-      <canvas id="expensesChart"></canvas>
-    </div>
-  );
+  // return (
+  //   <div>
+  //   <Bar data={data} />
+  // </div>
+  // );
 };
 
 export default ExpensesGraph;
