@@ -26,12 +26,6 @@ const ExpensesCategories = () => {
     setExpenses({ ...expenses, [category]: expense });
   };
 
-  // Handle submit expenses
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(expenses);
-  }
-
   // function to handle select month change
   const handleMonthChange = (e) => {
     setSelectedMonth(e.target.value);
