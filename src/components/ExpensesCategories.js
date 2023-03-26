@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import ExpensesGraph from "./ExpensesGraph.js";
 import PracticeGraph from "./PracticeGraph.js";
+import AddExpense from './AddExpense.js';
 
 const ExpensesCategories = () => {
    
@@ -16,10 +17,26 @@ const ExpensesCategories = () => {
     Broadband: 0.00,
     Entertainment: 0.00
   };
+
+  // months array
+  const months = [
+    'January', 
+    'February',
+    'March', 
+    'April', 
+    'May',
+    'June',
+    'July',
+    'August', 
+    'September',
+    'October', 
+    'November',
+    'December'
+  ];
   
   // state to hold expenses and selected month
   const [expenses, setExpenses] = useState(initialExpenses);
-  const [selectedMonth, setSelectedMonth] = useState("January");
+  const [selectedMonth, setSelectedMonth] = useState(months[0]);
 
   // function to update expense for a category
   const updateExpense = (category, expense) => {
@@ -40,12 +57,12 @@ const ExpensesCategories = () => {
   return (
     <div>
       <h2>Monthly Expenses for {selectedMonth}</h2>
-      <label htmlFor="month">Select Month:</label>
+      <label htmlFor="month">Select month:</label>
       <select id="month" value={selectedMonth} onChange={handleMonthChange}>
-        <option value="January">January</option>
-        <option value="February">February</option>
-        <option value="March">March</option>
-        {/* add more months as needed */}
+        {months.map((month, index) => {
+          return (<option key={index} value={month}>{month}</option>);
+        })}
+
       </select>
       
       <table>
@@ -66,6 +83,9 @@ const ExpensesCategories = () => {
                   onChange={(e) => updateExpense(category, parseFloat(e.target.value))}
                 />
               </td>
+              <td>
+                <button>x</button>
+              </td>
             </tr>
           ))}
           <tr>
@@ -75,7 +95,7 @@ const ExpensesCategories = () => {
         </tbody>
       </table>
       
-      
+      <AddExpense />
       <PracticeGraph expenses={expenses}/>
     </div>
   );

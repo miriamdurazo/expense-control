@@ -8,6 +8,8 @@ import { Wrapper } from './components/Wrapper';
 import { Footer } from './components/Footer';
 import { Hero } from './components/Hero';
 import ExpensesCategories from './components/ExpensesCategories.js';
+// import PracticeGraph from './components/PracticeGraph.js';
+// import AddExpense from './components/AddExpense.js';
 
 // Pages
 import { Home } from './pages/Home';
@@ -16,8 +18,7 @@ import { Contact } from './pages/Contact';
 
 // Style
 import './index.css'
-// import ExpensesGraph from './components/ExpensesGraph';
-import PracticeGraph from './components/PracticeGraph.js';
+
 
 function App() {
   return (
@@ -26,7 +27,7 @@ function App() {
         <Navbar />
         <Hero />
         <ExpensesCategories />
-      {/* <ExpensesGraph /> */}
+        {/* <AddExpense /> */}
       {/* <PracticeGraph /> */}
         <Wrapper>
           <Routes>
