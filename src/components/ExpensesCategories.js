@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import PracticeGraph from "./PracticeGraph.js";
 import AddExpense from './AddExpense.js';
 
+// Style
+import '../styles/expenses.css'
+
 const ExpensesCategories = () => {
    
   // initial expenses state
@@ -55,48 +58,64 @@ const ExpensesCategories = () => {
 
   // render function
   return (
-    <div>
-      <h2>Monthly Expenses for {selectedMonth}</h2>
-      <label htmlFor="month">Select month:</label>
-      <select id="month" value={selectedMonth} onChange={handleMonthChange}>
+    <div className="p-10">
+      <h2 className="text-3xl py-4 font-semibold">Monthly expenses for the month of {selectedMonth}</h2>
+      <label htmlFor="month">Select month: </label>
+      <select id="month" value={selectedMonth} onChange={handleMonthChange}> 
         {months.map((month, index) => {
           return (<option key={index} value={month}>{month}</option>);
         })}
 
       </select>
-      
-      <table>
-        <thead>
-          <tr>
-            <th>Category</th>
-            <th>Expense</th>
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(expenses).map(([category, expense]) => (
-            <tr key={category}>
-              <td>{category}</td>
-              <td>
-                <input
-                  type="number"
-                  value={expense}
-                  onChange={(e) => updateExpense(category, parseFloat(e.target.value))}
-                />
-              </td>
-              <td>
-                <button>x</button>
-              </td>
-            </tr>
-          ))}
-          <tr>
-            <td>Total</td>
-            <td>{totalExpenses}</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="mt-2 flex flex-col">
+        <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
+          <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+            <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-blue-800">
+                  <tr>
+                    <th className="group px-6 py-3 text-left text-lg font-semibold text-slate-200 uppercase tracking-wider">
+                      Category
+                    </th>
+                    <th className="px-6 py-3 text-left text-lg font-semibold text-slate-200 uppercase tracking-wider">
+                      Cost (£)
+                    </th>
+                    <th className="px-2 py-3 text-left text-lg font-semibold text-slate-200 uppercase tracking-wider">
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {Object.entries(expenses).map(([category, expense]) => (
+                    <tr key={category}>
+                      <td className="px-6 py-4 whitespace-nowrap">{category}</td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <input
+                          type="number"
+                          value={expense}
+                          onChange={(e) => updateExpense(category, parseFloat(e.target.value))}
+                        />
+                      </td>
+                      <td className="px-2 py-4 whitespace-nowrap">
+                        <button>x</button>
+                      </td>
+                    </tr>
+                  ))}
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap">Total</td>
+                    <td className="px-6 py-4 whitespace-nowrap">{totalExpenses}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
       
       <AddExpense />
-      <PracticeGraph expenses={expenses}/>
+      <div >
+        <PracticeGraph expenses={expenses}/>
+      </div>
+      
     </div>
   );
 };
