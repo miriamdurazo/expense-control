@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import { ExpensesProvider } from "./contexts/ExpensesContext.js";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <ExpensesProvider>
+      <App />
+    </ExpensesProvider>
+    
   </React.StrictMode>
 );
 
