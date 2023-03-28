@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 // Components
 import { Navbar } from './components/Navbar';
+import { Hero } from './components/Hero';
+import { Exchange } from './components/Exchange';
 import { Wrapper } from './components/Wrapper';
 import { Footer } from './components/Footer';
-import { Hero } from './components/Hero';
 
 // Pages
 import { Home } from './pages/Home';
@@ -22,6 +23,7 @@ function App() {
       <div>
         <Navbar />
         <Hero />
+        <Exchange />
         <Wrapper>
           <Routes>
             <Route path = "/" element = { <Home /> } />
