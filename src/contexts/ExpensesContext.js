@@ -1,51 +1,69 @@
-import React, { createContext, useContext, useState } from "react";
-// import { v4 as uuid } from 'uuid';
+import React, { createContext, useReducer, useContext, useState } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
+import { v4 as uuidV4 } from 'uuid';
 
-const ExpensesContext = createContext();
+const AppReducer = (state, action) => {
+    switch (action.type) {
+        case 'ADD_EXPENSE':
+            return {
+                ...state, 
+                expenses: [...state.expenses, action.payload],
+            }
+            break;
+        case 'DELETE_EXPENSE':
+            return {
+                ...state, 
+                expenses: state.expenses.filter((expense) => expense.id !== action.payload),
+            }
+            break;
+        default:
+            return state;
+            break;
+    }
+}
+
+// initial state
+const initialState = {
+    budget: 2000,
+    income: 1000,
+    expenses: [
+        {id: 12, name: 'Miscellaneous', cost: 0.00},
+        {id: 13, name: 'Transport', cost: 0.00},
+        {id: 14, name: 'Groceries', cost: 0.00},
+        {id: 15, name: 'Eating Out', cost: 0.00},
+        {id: 16, name: 'Shopping', cost: 0.00},
+        {id: 17, name: 'Housing', cost: 0.00},
+        {id: 18, name: 'Utility Bills', cost: 0.00},
+        {id: 19, name: 'Broadband', cost: 0.00},
+        {id: 20, name: 'Entertainment', cost: 0.00},
+    ],
+}
+
+export const ExpensesContext = createContext();
 
 export function useExpenses() {
   return useContext(ExpensesContext);
 }
 
-export const ExpensesProvider = ({ children }) => {
-  // initial expenses state
-  const initialExpenses = {
-    Miscellaneous: 0.0,
-    Transport: 0.0,
-    Groceries: 0.0,
-    EatingOut: 0.0,
-    Shopping: 0.0,
-    Housing: 0.0,
-    UtilityBills: 0.0,
-    Broadband: 0.0,
-    Entertainment: 0.0,
-  };
+
+// maybe change children to props
+export const ExpensesProvider = (props) => {
+    const [state, dispatch] = useReducer(AppReducer, initialState);
   // state to hold expenses
-  const [expenses, setExpenses] = useState(initialExpenses);
+//   const [expenses, setExpenses] = useState(initialExpenses);
+  const [expenses, setExpenses] = useLocalStorage("expenses", []);
 
-//   function addExpenseCategory({ expenseCategoryName, amount }) {
-//     setExpenses((prevExpenses) => {
-//       return [...prevExpenses, { id: uuidV4(), expenseCategoryName, amount }];
-//     });
-//   }
-
-  function deleteExpenseCategory({ id }) {
-    setExpenses(prevExpenses => {
-        return prevExpenses.filter(expense => expense.id !== id)
-    })
-  }
   return (
     <ExpensesContext.Provider
       value={{
-        // budget,
-        expenses,
-        // addExpenseCategory,
-        // deleteExpenseCategory,
-        // addBudget,
-        // deleteBudget,
+        budget: state.budget,
+        income: state.income,
+        expenses: state.expenses,
+        dispatch,
+        
       }}
     >
-      {children}
+      {props.children}
     </ExpensesContext.Provider>
   );
 };

@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { TiDelete } from "react-icons/ti";
+import { ExpensesContext } from '../contexts/ExpensesContext.js';
 // import ExpensesGraph from "./ExpensesGraph.js";
 import PracticeGraph from "./PracticeGraph.js";
 import AddExpense from './AddExpense.js';
@@ -6,7 +8,15 @@ import AddExpense from './AddExpense.js';
 // Style
 import '../styles/expenses.css'
 
-const ExpensesCategories = () => {
+const ExpensesCategories = (props) => {
+  const { dispatch } = useContext(ExpensesContext);
+  const handleDeleteExpense = () => {
+    dispatch({ 
+      type: 'DELETE_EXPENSE',
+      payload: props.id,});
+  }
+
+   
    
   // initial expenses state
   const initialExpenses = {
@@ -36,16 +46,35 @@ const ExpensesCategories = () => {
     'November',
     'December'
   ];
+
+  const expensesList = {expenses: [
+    {id: 12, name: 'Miscellaneous', cost: 0.00},
+    {id: 13, name: 'Transport', cost: 0.00},
+    {id: 14, name: 'Groceries', cost: 0.00},
+    {id: 15, name: 'Eating Out', cost: 0.00},
+    {id: 16, name: 'Shopping', cost: 0.00},
+    {id: 17, name: 'Housing', cost: 0.00},
+    {id: 18, name: 'Utility Bills', cost: 0.00},
+    {id: 19, name: 'Broadband', cost: 0.00},
+    {id: 20, name: 'Entertainment', cost: 0.00},
+  ]};
   
-  // state to hold expenses and selected month
-  const [expenses, setExpenses] = useState(initialExpenses);
-  const [selectedMonth, setSelectedMonth] = useState(months[0]);
+  // state to hold expenses 
+  // const [expenses, setExpenses] = useState(initialExpenses);
+  const [expenses, setExpenses] = useState(expensesList.expenses);
 
   // function to update expense for a category
+  // const updateExpense = (category, expense) => {
+  //   console.log(`The expenses array contains: ${expensesList[0].name}` );
+  //   setExpenses({ ...expenses, [category]: expense });
+  // };
   const updateExpense = (category, expense) => {
+    console.log(`The expenses array contains: ${expensesList.expenses[0].name}` );
     setExpenses({ ...expenses, [category]: expense });
   };
 
+    // state to hold selected month
+    const [selectedMonth, setSelectedMonth] = useState(months[0]);
   // function to handle select month change
   const handleMonthChange = (e) => {
     setSelectedMonth(e.target.value);
@@ -65,9 +94,54 @@ const ExpensesCategories = () => {
         {months.map((month, index) => {
           return (<option key={index} value={month}>{month}</option>);
         })}
-
       </select>
+      
       <div className="mt-2 flex flex-col">
+        <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
+          <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+            <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+              <table className="min-w-full divide-y divide-gray-200">
+                <thead className="bg-blue-800">
+                  <tr>
+                    <th className="group px-6 py-3 text-left text-lg font-semibold text-slate-200 uppercase tracking-wider">
+                      Category
+                    </th>
+                    <th className="px-6 py-3 text-left text-lg font-semibold text-slate-200 uppercase tracking-wider">
+                      Cost (£)
+                    </th>
+                    <th className="px-2 py-3 text-left text-lg font-semibold text-slate-200 uppercase tracking-wider">
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white divide-y divide-gray-200">
+                  {Object.entries(expenses).map(([category, expense]) => (
+                    <tr key={category}>
+                      <td className="px-6 py-4 whitespace-nowrap">{category}</td>
+                      <td className="px-6 py-4 whitespace-nowrap">
+                        <input
+                          type="number"
+                          value={expense}
+                          onChange={(e) => updateExpense(category, parseFloat(e.target.value))}
+                        />
+                      </td>
+                      <td className="px-2 py-4 whitespace-nowrap">
+                        {/* <button>x</button> */}
+                        <TiDelete size='1.5em' onClick={handleDeleteExpense}></TiDelete>
+                      </td>
+                    </tr>
+                  ))}
+                  <tr>
+                    <td className="px-6 py-4 whitespace-nowrap">Total</td>
+                    <td className="px-6 py-4 whitespace-nowrap">{totalExpenses}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>  
+
+      {/* <div className="mt-2 flex flex-col">
         <div className="-my-2 overflow-x-auto -mx-4 sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
             <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
@@ -109,7 +183,7 @@ const ExpensesCategories = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       
       <AddExpense />
       <div >
