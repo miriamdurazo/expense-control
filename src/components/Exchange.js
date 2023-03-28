@@ -6,16 +6,16 @@ import InputAmount from './InputAmount';
 
 export const Exchange = () => {
   const [currencyOptions, setCurrencyOptions] = useState([]);
-  const [fromCurrency, setFromCurrency] = useState();
-  const [toCurrency, setToCurrency] = useState();
-  const [exchangeRate, setExchangeRate] = useState();
+  const [fromCurrency, setFromCurrency] = useState('');
+  const [toCurrency, setToCurrency] = useState('');
+  const [exchangeRate, setExchangeRate] = useState(0);
   const [firstAmount, setFirstAmount] = useState(1);
-  const [secondAmount, setSecondAmount] = useState();
+  const [secondAmount, setSecondAmount] = useState(100);
   const [date, setDate] = useState();
   const [time, setTime] = useState();
 
   const myHeaders = new Headers();
-  myHeaders.append('apikey', '3wiIIlQx49x4QFG83jKzK8Iw3sXGjvJ');
+  myHeaders.append('apikey', '3wiIIlQx49x4QFG83jKzK8Iw3sXGjvJN');
 
   const requestOptions = {
   method: 'GET',
@@ -27,23 +27,27 @@ export const Exchange = () => {
     fetch('https://api.apilayer.com/exchangerates_data/latest?', requestOptions)
       .then(response => response.json())
       .then(data => {
+        console.log(data)
         const firstCurrency = Object.keys(data.rates)[49];
         const secondCurrency = Object.keys(data.rates)[46];
         setDate(new Date(data.date).toLocaleDateString());
         setTime(new Date(data.timestamp).toLocaleTimeString());
-        console.log(date)
+        /*console.log(date)
         console.log(time)
-        console.log(data)
+        console.log(data)*/
 
         setCurrencyOptions([...Object.keys(data.rates)]);
         setFromCurrency(firstCurrency);
         setToCurrency(secondCurrency);
         setExchangeRate(data.rates[firstCurrency]);
         setSecondAmount((firstAmount * exchangeRate).toFixed(2));
+        console.log('second amount' + secondAmount)
+        console.log('fisrt amount' + firstAmount)
+        console.log('exchange rate' + exchangeRate)
       })
   }, [])
 
-  useEffect(() => {
+ /* useEffect(() => {
     const baseURL = 'https://api.apilayer.com/exchangerates_data/latest';
     if(fromCurrency != null && toCurrency != null) {
       fetch( `${baseURL} ?symbols=${toCurrency} &base=${fromCurrency}`, requestOptions)
@@ -57,12 +61,12 @@ export const Exchange = () => {
         console.log('=================' +exchangeRate)
         console.log(secondAmount)
       }
-  }, [fromCurrency, toCurrency])
+  }, [fromCurrency, toCurrency])*/
   
   const handleSwitch = () => {
     setFromCurrency(toCurrency);
     setToCurrency(fromCurrency);
-    setSecondAmount((firstAmount * exchangeRate).toFixed(2))
+    /*setSecondAmount((firstAmount * exchangeRate).toFixed(2))*/
   }
   
   return (
@@ -95,7 +99,7 @@ export const Exchange = () => {
               amount={firstAmount}
               onChangeAmount={e => 
                 {setFirstAmount(e.target.value);
-                setSecondAmount((firstAmount * exchangeRate).toFixed(2))}
+                /*setSecondAmount((firstAmount * exchangeRate).toFixed(2))*/}
               }
             />
             <DisplayAmount
