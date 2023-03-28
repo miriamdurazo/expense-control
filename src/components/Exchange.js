@@ -47,21 +47,24 @@ export const Exchange = () => {
       });
   });
 
-  /* useEffect(() => {
-    const baseURL = 'https://api.apilayer.com/exchangerates_data/latest';
-    if(fromCurrency != null && toCurrency != null) {
-      fetch( `${baseURL} ?symbols=${toCurrency} &base=${fromCurrency}`, requestOptions)
-        .then(response => response.json())
-        .then(data => {
-          setExchangeRate(data.rates[toCurrency])
-          setSecondAmount((firstAmount * exchangeRate).toFixed(2))
+  useEffect(() => {
+    const baseURL = "https://api.apilayer.com/exchangerates_data/latest";
+    if (fromCurrency !== '' && toCurrency !== '') {
+      fetch(
+        `${baseURL}?symbols=${toCurrency}&base=${fromCurrency}`,
+        requestOptions
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          setExchangeRate(data.rates[toCurrency]);
+          setSecondAmount((firstAmount * exchangeRate).toFixed(2));
           setDate(new Date(data.date).toLocaleDateString());
           setTime(new Date(data.timestamp).toLocaleTimeString());
-        })
-        console.log('=================' +exchangeRate)
-        console.log(secondAmount)
-      }
-  }, [fromCurrency, toCurrency])*/
+        });
+      console.log("=================" + exchangeRate);
+      console.log(secondAmount);
+    }
+  }, [fromCurrency, toCurrency, firstAmount]);
 
   const handleSwitch = () => {
     setFromCurrency(toCurrency);
