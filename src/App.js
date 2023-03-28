@@ -11,6 +11,7 @@ import { Hero } from "./components/Hero";
 import ExpensesCategories from "./components/ExpensesCategories.js";
 // import PracticeGraph from './components/PracticeGraph.js';
 import AddExpense from "./components/AddExpense.js";
+import ExpenseList from "./components/ExpenseList.js";
 
 // Pages
 import { Home } from "./pages/Home";
@@ -27,9 +28,12 @@ function App() {
         <div>
           <Navbar />
           <Hero />
-          <ExpensesCategories />
-          <AddExpense />
+          
+          {/* <ExpensesCategories /> */}
+
+          {/* <AddExpense /> */}
           {/* <PracticeGraph /> */}
+          <ExpenseList />
           <Wrapper>
             <Routes>
               <Route path="/" element={<Home />} />

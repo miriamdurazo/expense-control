@@ -16,8 +16,9 @@ const ExpensesCategories = (props) => {
       payload: props.id,});
   }
 
-   
-   
+  
+   console.log(`the props are ${JSON.stringify(props)}`);
+   console.log(`the props are ${expenses}`);
   // initial expenses state
   const initialExpenses = {
     Miscellaneous: 0.00,
@@ -60,8 +61,8 @@ const ExpensesCategories = (props) => {
   ]};
   
   // state to hold expenses 
-  // const [expenses, setExpenses] = useState(initialExpenses);
-  const [expenses, setExpenses] = useState(expensesList.expenses);
+  const [expenses, setExpenses] = useState(initialExpenses);
+
 
   // function to update expense for a category
   // const updateExpense = (category, expense) => {
@@ -80,6 +81,7 @@ const ExpensesCategories = (props) => {
     setSelectedMonth(e.target.value);
   };
 
+    //  TO DO: put this function in another component
   // function to calculate total expenses
   const totalExpenses = Object.values(expenses).reduce(
     (total, expense) => parseFloat(total) + parseFloat(expense)
@@ -130,10 +132,7 @@ const ExpensesCategories = (props) => {
                       </td>
                     </tr>
                   ))}
-                  <tr>
-                    <td className="px-6 py-4 whitespace-nowrap">Total</td>
-                    <td className="px-6 py-4 whitespace-nowrap">{totalExpenses}</td>
-                  </tr>
+                  
                 </tbody>
               </table>
             </div>
