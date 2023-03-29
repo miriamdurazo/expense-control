@@ -8,8 +8,7 @@ import { Navbar } from "./components/Navbar";
 import { Wrapper } from "./components/Wrapper";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
-import ExpensesCategories from "./components/ExpensesCategories.js";
-// import PracticeGraph from './components/PracticeGraph.js';
+import PracticeGraph from './components/PracticeGraph.js';
 import AddExpense from "./components/AddExpense.js";
 import ExpenseList from "./components/ExpenseList.js";
 
@@ -28,12 +27,10 @@ function App() {
         <div>
           <Navbar />
           <Hero />
-          
-          {/* <ExpensesCategories /> */}
-
-          {/* <AddExpense /> */}
-          {/* <PracticeGraph /> */}
           <ExpenseList />
+          <AddExpense />
+          <PracticeGraph />
+          
           <Wrapper>
             <Routes>
               <Route path="/" element={<Home />} />

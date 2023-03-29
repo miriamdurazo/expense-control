@@ -23,6 +23,8 @@ export const AddExpense = () => {
         payload: expense, 
     });
     alert(`The category of ${category} with an amount of £${amount} has been added`);
+    setCategory('');
+    setAmount('');
   };  
 
 
