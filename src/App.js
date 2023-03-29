@@ -11,6 +11,8 @@ import { Hero } from "./components/Hero";
 import PracticeGraph from './components/PracticeGraph.js';
 import AddExpense from "./components/AddExpense.js";
 import ExpenseList from "./components/ExpenseList.js";
+import { Budget } from "./components/Budget.js";
+import { Income } from "./components/Income.js";
 import ExpenseTotal from './components/ExpenseTotal.js';
 
 // Pages
@@ -29,8 +31,8 @@ function App() {
         <div>
           <Navbar />
           <Hero />
-
-
+          <Budget />
+          <Income />
           
           <ExpenseList />
           <AddExpense />
@@ -38,7 +40,6 @@ function App() {
           <div className="p-10">
             <PracticeGraph />
           </div>
-          
           
           <Wrapper>
             <Routes>

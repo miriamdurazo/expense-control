@@ -1,5 +1,6 @@
-import React, { createContext, useReducer, useContext, useState } from "react";
-import useLocalStorage from "../hooks/useLocalStorage";
+import React, { createContext, useReducer } from "react";
+// useState
+// import useLocalStorage from "../hooks/useLocalStorage";
 import { v4 as uuidv4 } from 'uuid';
 
 const AppReducer = (state, action) => {
@@ -8,19 +9,20 @@ const AppReducer = (state, action) => {
             return {
                 ...state, 
                 expenses: [...state.expenses, action.payload],
+                expensesTotal: state.expensesTotal + action.payload.cost,
             }
-            break;
-        case 'DELETE_EXPENSE':
+            
+        case 'DELETE_EXPENSE':{
+          const deletedExpense = state.expenses.find((expense) => expense.id === action.payload);
             return {
                 ...state, 
                 expenses: state.expenses.filter((expense) => expense.id !== action.payload),
-            }
-            break;
+                expensesTotal: state.expensesTotal - deletedExpense.cost,
+            };
+          }
+            
         case 'UPDATE_EXPENSES':
-            // return {
-            //   ...state,
-            //   expenses: [...state.expenses, action.payload],
-            // };
+            {
             const updatedExpenses = state.expenses.map((expense) => {
               if (expense.id === action.payload.id) {
                   return {
@@ -34,12 +36,21 @@ const AppReducer = (state, action) => {
             return {
               ...state,
               expenses: updatedExpenses,
+              expensesTotal: updatedExpenses.reduce((acc, expense) => acc + expense.cost, 0),
             };
-            break;
+          }
             
+            
+        case 'ADD_BUDGET':
+          return {
+            ...state, 
+            budget: action.payload,
+          }
+          
+
         default:
             return state;
-            break;
+            
     }
 }
 
@@ -58,21 +69,15 @@ const initialState = {
         {id: uuidv4(), name: 'Broadband', cost: 0.00},
         {id: uuidv4(), name: 'Entertainment', cost: 0.00},
     ],
+    expensesTotal: 0,
 }
 
 export const ExpensesContext = createContext();
 
-// export function useExpenses() {
-//   return useContext(ExpensesContext);
-// }
-
-
-// maybe change children to props
 export const ExpensesProvider = (props) => {
     const [state, dispatch] = useReducer(AppReducer, initialState);
-  // state to hold expenses
-//   const [expenses, setExpenses] = useState(initialExpenses);
-  const [expensesLocal, setExpensesLocal] = useLocalStorage("expenses", [state.expenses]);
+
+  // const [expensesLocal, setExpensesLocal] = useLocalStorage("expenses", [state.expenses]);
 
   return (
     <ExpensesContext.Provider
@@ -80,6 +85,7 @@ export const ExpensesProvider = (props) => {
         budget: state.budget,
         income: state.income,
         expenses: state.expenses,
+        expensesTotal: state.expensesTotal,
         dispatch,
         
       }}
