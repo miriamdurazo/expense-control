@@ -11,6 +11,7 @@ import { Hero } from "./components/Hero";
 import PracticeGraph from './components/PracticeGraph.js';
 import AddExpense from "./components/AddExpense.js";
 import ExpenseList from "./components/ExpenseList.js";
+import ExpenseTotal from './components/ExpenseTotal.js';
 
 // Pages
 import { Home } from "./pages/Home";
@@ -19,6 +20,7 @@ import { Contact } from "./pages/Contact";
 
 // Style
 import "./index.css";
+import './styles/expenses.css';
 
 function App() {
   return (
@@ -29,7 +31,11 @@ function App() {
           <Hero />
           <ExpenseList />
           <AddExpense />
-          <PracticeGraph />
+          <ExpenseTotal />
+          <div className="p-10">
+            <PracticeGraph />
+          </div>
+          
           
           <Wrapper>
             <Routes>
