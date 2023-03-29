@@ -43,7 +43,13 @@ const AppReducer = (state, action) => {
             budget: action.payload,
           }
           break;
-
+          
+        case 'ADD_INCOME':
+          return {
+            ...state,
+            budget: action.payload,
+          }
+          break;  
         default:
             return state;
             break;
