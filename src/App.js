@@ -29,6 +29,9 @@ function App() {
         <div>
           <Navbar />
           <Hero />
+
+
+          
           <ExpenseList />
           <AddExpense />
           <ExpenseTotal />
