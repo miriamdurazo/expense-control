@@ -13,7 +13,8 @@ import AddExpense from "./components/AddExpense.js";
 import ExpenseList from "./components/ExpenseList.js";
 import { Budget } from "./components/Budget.js";
 import { Income } from "./components/Income.js";
-import IncomePercentile from "./components/comparison.js";
+import IncomePercentile from "./components/comparison.js";import ExpenseTotal from './components/ExpenseTotal.js';
+
 // Pages
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
@@ -21,6 +22,7 @@ import { Contact } from "./pages/Contact";
 
 // Style
 import "./index.css";
+import './styles/expenses.css';
 
 function App() {
   return (
@@ -32,9 +34,14 @@ function App() {
           <Budget />
           <Income />
           <IncomePercentile/>
+          
           <ExpenseList />
           <AddExpense />
-          <PracticeGraph />
+          <ExpenseTotal />
+          <div className="p-8">
+            <PracticeGraph />
+          </div>
+          
           <Wrapper>
             <Routes>
               <Route path="/" element={<Home />} />
