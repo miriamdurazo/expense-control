@@ -107,7 +107,7 @@ nav {
 
 /* Exchange Calculator - start section */
 
-.exchange-section {
+.container{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -115,52 +115,54 @@ nav {
   margin-bottom: 100px;
   padding: 20px;
 }
-
+  
 #exchangeImg {
   width: 350px;
 }
-
+  
 .exchange-title {
   color: #ff884a;
   margin-top: -90px;
   text-align: center;
 }
-
-#swap {
-  color: white;
-  background-color: #ff884a;
-  cursor: pointer;
-  border-radius: .3em;
-  font-size: 12px;
-  padding: 5px 12px;
-}
-
+  
 .exchange-p,
-.currency {
+.row {
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
 
-#currency-option {
+.column-rates {
+  margin-bottom: .5rem;
+}
+
+select {
   padding: .5rem;
+  margin-left: 1rem;
   border: 1px solid #dedede;
   background: transparent;
   border-radius: .3em;
 }
-
-.input-amount {
+  
+.input {
   padding: .5rem 2rem;
   display: flex;
   justify-content:space-between;
   align-items: center;
 }
-
-#swap {
-  margin: 0 3rem; 
+  
+#swap1 {
+  color: white;
+  background-color: #ff884a;
+  cursor: pointer;
+  border-radius: .3em;
+  font-size: 12px;
+  padding: 5px 12px;
+  margin: 1rem; 
 }
-
+  
 #amount {
   padding: .5rem;
   -webkit-appearance: none;
@@ -170,38 +172,38 @@ nav {
   text-align: right;
   border-radius: .3em;
 }
-
+  
 .rate {
   color: #ff884a;
   font-size: 14px;
   margin-left: 2rem;
   text-align: right;
-  
 }
-
+  
 .base-data {
   font-size: 17px;
   color: #000;
   font-weight: 500;
 }
-
+  
 .rate-data {
-  font-size: xx-large;
+  font-size: x-large;
+  color: #ff884a;
   font-weight: 700;
 }
-
+  
 .data-info {
   font-size: 13px;
   color: #000;
   font-weight: 600;
 }
-
+  
 select:focus,
 input:focus,
 button:focus {
   outline: 0;
 }
-
+  
 @media (max-width: 600px) {
   #amout {
     width: 200px;
