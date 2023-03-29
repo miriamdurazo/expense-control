@@ -13,7 +13,7 @@ import AddExpense from "./components/AddExpense.js";
 import ExpenseList from "./components/ExpenseList.js";
 import { Budget } from "./components/Budget.js";
 import { Income } from "./components/Income.js";
-
+import IncomePercentile from "./components/comparison.js";
 // Pages
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
@@ -31,6 +31,7 @@ function App() {
           <Hero />
           <Budget />
           <Income />
+          <IncomePercentile/>
           <ExpenseList />
           <AddExpense />
           <PracticeGraph />
