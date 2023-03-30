@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { ExpensesContext } from "../contexts/ExpensesContext";
 
 export const Income = () => {
-    const { income } = useContext(ExpensesContext);
+
     const {dispatch} = useContext(ExpensesContext);
     const [newIncome, setIncome] = useState ('');
 
