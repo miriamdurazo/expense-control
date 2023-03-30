@@ -19,6 +19,7 @@ export const Income = () => {
 
     return (
         <div>
+          <span className="instructions">Begin by typing the numbers and press enter to continue</span>
       <form className='income-form' onSubmit={handleSubmitIncome}>
       <label
         for="price"

@@ -7,7 +7,6 @@ import { ExpensesProvider } from "./contexts/ExpensesContext.js";
 import { Navbar } from "./components/Navbar";
 import { Wrapper } from "./components/Wrapper";
 import { Footer } from "./components/Footer";
-
 // Pages
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
