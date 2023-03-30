@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import logo  from '../assets/images/logo.png';
 
 export class Navbar extends Component {
@@ -16,10 +16,10 @@ export class Navbar extends Component {
         {/* Menu */}
         <div>
           <ul id='navbar' className={this.state.clicked ? '#navbar active' : 'navbar'}>
-            <NavLink href='home' to='/' className='navLink'>Home</NavLink>
-            <NavLink href='expenseChart' to='#expenseChart' className='navLink'>Expense Chart</NavLink>
-            <NavLink href='currency' to='#currecy' className='navLink'>Currency</NavLink>
-            <NavLink href='contact' to='/contact' className='navLink'>Contact us</NavLink>
+            <Link href='home' to='/' className='navLink'>Home</Link>
+            <Link href='expenseChart' to='#expenseChart' className='navLink'>Expense Chart</Link>
+            <Link href='currency' to='#currecy' className='navLink'>Currency</Link>
+            <Link href='contact' to='/contact' className='navLink'>Contact us</Link>
           </ul>
         </div>
         

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Darwin  from '../assets/images/Darwin_Michell.jpg';
 import Giuliana from '../assets/images/Giuliana_Castillo.jpg';
 import Miriam from '../assets/images/Miriam_Durazo.jpg';
@@ -31,20 +31,20 @@ export const Footer = () => {
             
           <div className='footer-col'>
             <h4>Resources</h4>
-            <a className='resources-link' href='https://canvasjs.com/' alt='CanvasJS' rel='noreferrer' target='_blank'>CanvasJS</a>
             <a className='resources-link' href='https://www.canva.com/' alt='Canva' rel='noreferrer' target='_blank'>Canva</a>
-            <a className='resources-link' href='https://apilayer.com/marketplace/exchangerates_data-api' alt='APILayer' rel='noreferrer' target='_blank'>APILayer</a>
-            <a className='resources-link' href='https://rapidapi.com/natkapral/api/currency-converter5/details' alt='RapidAPI' rel='noreferrer' target='_blank'>RapidAPI</a>
+            <a className='resources-link' href='https://canvasjs.com/' alt='CanvasJS' rel='noreferrer' target='_blank'>CanvasJS</a>
+            <a className='resources-link' href='https://apilayer.com/marketplace/exchangerates_data-api' alt='APILayer' rel='noreferrer' target='_blank'>ExchangeRatesAPI</a>
+            <a className='resources-link' href='https://tailwindcss.com/' alt='RapidAPI' rel='noreferrer' target='_blank'>TailwindCSS</a>
           </div>
 
           <div className='footer-col'>
             <h4>Company</h4>
-            <NavLink to='/about' className='footer-navLink'>About us</NavLink>
+            <Link to='/about' className='footer-navLink'>About us</Link>
           </div>
 
           <div className='footer-col'>
             <h4>Support</h4>
-            <NavLink to='/contact' className='footer-navLink'>Contact</NavLink>
+            <Link to='/contact' className='footer-navLink'>Contact</Link>
           </div>
 
         </div>
