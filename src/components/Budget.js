@@ -19,7 +19,6 @@ export const Budget = () => {
 
   return (
     <div>
-      <span className="instructions">Begin by typing the numbers and press enter to continue</span>
       <form className="budget-form" onSubmit={handleSubmitBudget}>
         <label
           for="price"
