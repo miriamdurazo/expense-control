@@ -7,13 +7,6 @@ import { ExpensesProvider } from "./contexts/ExpensesContext.js";
 import { Navbar } from "./components/Navbar";
 import { Wrapper } from "./components/Wrapper";
 import { Footer } from "./components/Footer";
-import { Hero } from "./components/Hero";
-import PracticeGraph from './components/PracticeGraph.js';
-import AddExpense from "./components/AddExpense.js";
-import ExpenseList from "./components/ExpenseList.js";
-import { Budget } from "./components/Budget.js";
-import { Income } from "./components/Income.js";
-import IncomePercentile from "./components/comparison.js";import ExpenseTotal from './components/ExpenseTotal.js';
 
 // Pages
 import { Home } from "./pages/Home";
@@ -30,18 +23,6 @@ function App() {
       <Router>
         <div>
           <Navbar />
-          <Hero />
-          <Budget />
-          <Income />
-          <IncomePercentile/>
-          
-          <ExpenseList />
-          <AddExpense />
-          <ExpenseTotal />
-          <div className="p-8">
-            <PracticeGraph />
-          </div>
-          
           <Wrapper>
             <Routes>
               <Route path="/" element={<Home />} />
