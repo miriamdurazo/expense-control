@@ -38,7 +38,7 @@ function ExpenseTable() {
                       <ExpenseCostInput id={expense.id} name={expense.name} cost={expense.cost} />
                     </td>
                     <td>
-                      <DeleteExpenseItem />
+                      <DeleteExpenseItem id={expense.id} />
                     </td>
                   </tr>
                 ))}

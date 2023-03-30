@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { TiDelete } from 'react-icons/ti';
 import { FaMinusCircle } from "react-icons/fa";
 import { ExpensesContext } from '../contexts/ExpensesContext.js';
 
@@ -15,10 +14,7 @@ const DeleteExpenseItem = (props) => {
 
 	return (
         
-		<button onClick={handleDeleteExpense}>
-        	<FaMinusCircle size='1.15em' style={{color: 'red'}} />
-		</button>
-		
+		<FaMinusCircle size='1.15em' style={{color: 'red'}} onClick={handleDeleteExpense}/>
         
 	);
 };
