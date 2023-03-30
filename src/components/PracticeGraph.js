@@ -4,7 +4,7 @@ import { Bar } from "react-chartjs-2";
 import { ExpensesContext } from "../contexts/ExpensesContext.js";
 
 
-const PracticeGraph = () => {
+export const PracticeGraph = () => {
   const { expenses } = useContext(ExpensesContext);
   
   console.log(`This is the expenses array? ${JSON.stringify(expenses)}`);
@@ -54,5 +54,3 @@ const PracticeGraph = () => {
     </div>
   );
 };
-
-export default PracticeGraph;

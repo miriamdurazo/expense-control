@@ -7,7 +7,7 @@ import { FaMoneyBillWave } from "react-icons/fa";
 import '../styles/expenses.css'
 
 
-const ExpenseTotal = () => {
+export const ExpenseTotal = () => {
 	const { expensesTotal } = useContext(ExpensesContext);
     // console.log(`Total expenses: £${expensesTotal}`);
 
@@ -17,5 +17,3 @@ const ExpenseTotal = () => {
 		</div>
 	);
 };
-
-export default ExpenseTotal;
