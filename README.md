@@ -3,7 +3,6 @@
 ## User story:
 As a user, I want an app to display my income and expenses in different categories: Miscellaneous, Transport, Groceries, Eating out, Shopping, Housing, Utility bills, Broadband and Entertainment. I also want to be able to add new categories, modify my income and budget and see my remaining for each month.
 
-<img width="1440" alt="Captura de Pantalla 2023-03-30 a las 16 59 17" src="https://user-images.githubusercontent.com/118186099/228895699-47da813b-e809-4930-82f4-60e1d9408cac.png">
 
 
 ## Description:
@@ -16,6 +15,8 @@ Expense control makes your finances easier to manage: with a user friendly desig
 4. If you want to delete a category, click on the 'X' next to the '+'
 5. If you wish to add new categories, scroll down to the 'Add category' section and type the category name and amount and click 'Add'
 6. To use the Exchange rate tool, select the amount and the currency type and see the amount reflected.
+
+![usagegif](./src/assets/images/demo.gif)
 
 ## Technologies used:
 1. React
