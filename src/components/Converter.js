@@ -17,7 +17,7 @@ export const Converter = () => {
   };
 
   const myHeaders = new Headers();
-  myHeaders.append("apike", "gXeAL7hwu3KrpBtcsvyqRvUp4HOfPEEs");
+  myHeaders.append("apikey", "3on336kylMg5q75MCYFfdTYZIbPujehU");
 
   const requestOptions = {
     method: "GET",
