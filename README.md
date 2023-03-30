@@ -37,8 +37,4 @@ https://docs.google.com/presentation/d/1yl1tWCMvxdy6g1ba3PkoSBLXBbXINv4NDgr6g3Qx
 
 ## Acknowledgments 
 
-<<<<<<< HEAD
 Thank you for all the TAs for all the support provided
-=======
-Thank you for all the TAs for all the support provided
->>>>>>> main
