@@ -8,7 +8,7 @@ import '../styles/expenses.css'
 
 
 
-const ExpenseList = () => {
+export const ExpenseList = () => {
 	// const { expenses } = useContext(ExpensesContext);
 
   // months array
@@ -51,4 +51,3 @@ const ExpenseList = () => {
 	);
 };
 
-export default ExpenseList;
