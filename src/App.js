@@ -15,6 +15,7 @@ import { Contact } from "./pages/Contact";
 
 // Style
 import "./index.css";
+import './styles/expenses.css';
 
 function App() {
   return (
