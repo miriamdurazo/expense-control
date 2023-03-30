@@ -1,4 +1,4 @@
-import React, { useRef, useState, useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { ExpensesContext } from '../contexts/ExpensesContext';
 import { v4 as uuidV4 } from 'uuid';
 
@@ -9,7 +9,7 @@ import '../styles/expenses.css'
 export const AddExpense = () => {
   const { dispatch } = useContext(ExpensesContext);
   const [category, setCategory] = useState('');
-  const [amount, setAmount] = useState('');
+  const [amount, setAmount] = useState('0');
   
   function handleSubmitExpense(e) {
     e.preventDefault();
@@ -24,15 +24,18 @@ export const AddExpense = () => {
     });
     alert(`The category of ${category} with an amount of £${amount} has been added`);
     setCategory('');
-    setAmount('');
+    setAmount('0');
   };  
 
 
   return (
-    <div className="p-8">
-        <h2 className="text-xl py-4 font-semibold">Add new expense category</h2>
-        <form className='w-96' onSubmit={handleSubmitExpense}>
-            <label>
+    <div className="p-8 text-center">
+        <div className='bg-blue-800 items-center text-indigo-100 leading-none rounded-full flex lg:inline-flex'>
+            <h2 className="text-xl py-4 px-6 font-semibold ">Add new expense category</h2>
+        </div>
+        
+        <form className='pt-2 block max-w-sm' onSubmit={handleSubmitExpense}>
+            <label className='mb-4 text-center'>
                 Category name:
                 <div className='p-2'>
                     <input className="placeholder:italic placeholder:text-slate-400 block bg-white w-80 border border-slate-300 rounded-md py-2 pl-2 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-md" placeholder="New category..." type="text" name="category" value={category} onChange={(e) => setCategory(e.target.value)} />
@@ -41,7 +44,7 @@ export const AddExpense = () => {
             <label>
                 Amount (£):
                 <div className='p-2'>
-                    <input className= "placeholder:italic placeholder:text-slate-400 block bg-white w-80 border border-slate-300 rounded-md py-2 pl-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-md" placeholder="0.00" type='number' value={amount} onChange={(e) => setAmount(e.target.value)} />
+                    <input className= "placeholder:italic placeholder:text-slate-400 block bg-white w-80 border border-slate-300 rounded-md py-2 pl-2 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-md" placeholder="0.00" type='number' onChange={(e) => setAmount(e.target.value)} />
                 </div>
             </label>
             <div className='py-2 pl-2'>

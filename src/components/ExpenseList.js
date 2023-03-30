@@ -1,6 +1,5 @@
-import React, { useContext, useState, useEffect } from 'react';
-import ExpenseItem from './ExpenseItem.js';
-import { ExpensesContext } from '../contexts/ExpensesContext.js';
+import React, { useState } from 'react';
+// import { ExpensesContext } from '../contexts/ExpensesContext.js';
 import ExpenseTable from "./ExpenseTable.js";
 
 
@@ -10,22 +9,9 @@ import '../styles/expenses.css'
 
 
 const ExpenseList = () => {
-	const { expenses } = useContext(ExpensesContext);
+	// const { expenses } = useContext(ExpensesContext);
 
-	const [filteredExpenses, setfilteredExpenses] = useState(expenses || []);
-
-	useEffect(() => {
-		setfilteredExpenses(expenses);
-	}, [expenses]);
-
-	// const handleChange = (event) => {
-	// 	const searchResults = expenses.filter((filteredExpense) =>
-	// 		filteredExpense.name.toLowerCase().includes(event.target.value)
-	// 	);
-	// 	setfilteredExpenses(searchResults);
-	// };
-
-      // months array
+  // months array
   const months = [
     'January', 
     'February',
@@ -51,7 +37,7 @@ const ExpenseList = () => {
 	return (
 		<>
       <div className="p-10">
-          <h2 className="text-3xl py-4 font-semibold">Money spent in {selectedMonth}</h2>
+          <h2 className="text-3xl py-4  text-blue-800 text-center font-semibold">Money spent in {selectedMonth}</h2>
           <label className="group px-6 py-3 text-left text-lg font-semibold text-blue-800 uppercase tracking-wider" htmlFor="month">Select month: </label>
           <select id="month" value={selectedMonth} onChange={handleMonthChange}> 
               {months.map((month, index) => {

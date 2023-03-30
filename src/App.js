@@ -36,9 +36,16 @@ function App() {
           <IncomePercentile/>
           
           <ExpenseList />
-          <AddExpense />
-          <ExpenseTotal />
-          <div className="p-8">
+
+          <div class="p-4 flex justify-center">
+            <AddExpense />
+          </div>
+
+          <div class="p-4 flex justify-center">
+            <ExpenseTotal />  
+          </div>
+          
+          <div className="p-8 max-w-full" >
             <PracticeGraph />
           </div>
           
