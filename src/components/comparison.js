@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { ExpensesContext } from '../contexts/ExpensesContext.js';
 
-const IncomePercentile = () => {
+export const IncomePercentile = () => {
     const { income } = useContext(ExpensesContext);
     // let income = parseInt(response);
     switch (true) {
@@ -19,5 +19,3 @@ const IncomePercentile = () => {
             return <span className = "incomePercentile" style = {{color:"red"}}>10th percentile</span>
     }
 }
-
-export default IncomePercentile
