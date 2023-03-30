@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ExpensesContext } from "../contexts/ExpensesContext";
 
 export const Income = () => {
@@ -13,13 +13,13 @@ export const Income = () => {
             type: 'ADD_INCOME',
             payload: income,
         });
-        alert(`The new income is £ ${income}`);
+        alert(`The new income is £ ${newIncome}`);
         setIncome('');
     };
 
     return (
         <div className='income-container'>
-            <span>Income: £{income}</span>
+            <span>Income: £{newIncome}</span>
         </div>
     )
 }

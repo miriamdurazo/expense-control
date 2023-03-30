@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ExpensesContext } from '../contexts/ExpensesContext.js';
-
+import { FaMoneyBillWave } from 'react-icons/fa';
 // FaMoneyBillWave
 // Style
 import '../styles/expenses.css'
