@@ -105,6 +105,52 @@ nav {
 
 /* Hero - end section */
 
+/* Total Left - start section */
+
+.totalLeftCol{
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.h2El1,
+.h2El2 {
+  font-size: 45px;
+  font-weight: 600px;
+}
+.h3El {
+  font-size: 20px;
+}
+.totalLeft {
+  background-color: #e8833a;
+  padding: 3.5rem 7.5rem;
+  font-size: 3rem;
+  line-height: 1rem;
+  border-radius: 9999px;
+  margin: 2rem 0;
+  align-items: center;
+  color: white;
+}
+
+.currencyBtn {
+  background-color: #1aae9f;
+  padding: 3.5rem 7.5rem;
+  font-size: 3rem;
+  line-height: 1rem;
+  border-radius: 9999px;
+  margin: 2rem 0;
+  align-items: center;
+  color: white;
+}
+
+.currencyBtn:hover {
+  background-color: #a9d8d3;
+}
+/* Total Left - end section */
+
 /* Exchange Calculator - start section */
 
 .container {
