@@ -335,3 +335,60 @@ hr {
 }
 
 /* Footer - end section */
+
+/* Budget and income sections */
+
+.instructions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
+  font-size: medium;
+  letter-spacing: 2px;
+  font-weight: 300;
+  white-space: nowrap;
+}
+
+.budget-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: #ff884a;
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#budget-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color:#163159;
+  font-size: x-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.income-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: #ff884a;
+  color: black;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+#income-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color:#163159;
+  font-size: x-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+/* End of budget and income sections */
