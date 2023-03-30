@@ -8,14 +8,16 @@ import { AddExpense } from '../components/AddExpense';
 import { ExpenseTotal } from '../components/ExpenseTotal.js';
 import { PracticeGraph } from '../components/PracticeGraph';
 import { Converter } from '../components/Converter';
+import { Remaining } from "../components/Remaining";
 
 export const Home = () => {
   return (
     <div name='home'>
       <Hero />
-      <Budget />
       <Income />
       <IncomePercentile />
+      <Budget />
+      <Remaining />
       <ExpenseList />
       <AddExpense />
       <ExpenseTotal />
