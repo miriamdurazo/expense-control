@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 import logo  from '../assets/images/logo.png';
 
 export class Navbar extends Component {
@@ -8,17 +9,17 @@ export class Navbar extends Component {
   render() {
     return (
       <nav>
-        <a href="canvaLogo" to='#page-top'>
+        <a href='canvaLogo' to='/'>
           <img id='logo' src={ logo } alt='expense control logo' />
         </a>
         
         {/* Menu */}
         <div>
-          <ul id="navbar" className={this.state.clicked ? '#navbar active' : 'navbar'}>
-            <a href="home" to="#page-top" className='navLink'>Home</a>
-            <a href="expenseChart" to="#expenseChart" className='navLink'>Expense Chart</a>
-            <a href="currency" to="#currecy" className='navLink'>Currency</a>
-            <a href="contact" to="#contact" className='navLink'>Contact us</a>
+          <ul id='navbar' className={this.state.clicked ? '#navbar active' : 'navbar'}>
+            <NavLink href='home' to='/' className='navLink'>Home</NavLink>
+            <NavLink href='expenseChart' to='#expenseChart' className='navLink'>Expense Chart</NavLink>
+            <NavLink href='currency' to='#currecy' className='navLink'>Currency</NavLink>
+            <NavLink href='contact' to='/contact' className='navLink'>Contact us</NavLink>
           </ul>
         </div>
         

@@ -5,13 +5,8 @@ import { ExpensesProvider } from "./contexts/ExpensesContext.js";
 
 // Components
 import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
 import { Wrapper } from "./components/Wrapper";
 import { Footer } from "./components/Footer";
-import PracticeGraph from './components/PracticeGraph.js';
-import AddExpense from "./components/AddExpense.js";
-import ExpenseList from "./components/ExpenseList.js";
-import { Converter } from './components/Converter';
 
 // Pages
 import { Home } from "./pages/Home";
@@ -27,11 +22,6 @@ function App() {
       <Router>
         <div>
           <Navbar />
-          <Hero />
-          <ExpenseList />
-          <AddExpense />
-          <PracticeGraph />
-          <Converter />
           <Wrapper>
             <Routes>
               <Route path="/" element={<Home />} />
