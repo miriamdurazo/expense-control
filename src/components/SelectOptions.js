@@ -14,7 +14,7 @@ export default function SelectOptions(props) {
     <div className="column-rates">
       <form className="form-inline mb-4">
         <input
-          className="form-control form-control-lg mx-3"
+          className="form-control form-control-lg"
           type="number"
           value={amount}
           disabled={isdisable}

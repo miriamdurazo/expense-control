@@ -1,5 +1,4 @@
 import React, { useContext, useState, useEffect } from 'react';
-import ExpenseItem from './ExpenseItem.js';
 import { ExpensesContext } from '../contexts/ExpensesContext.js';
 import ExpenseTable from "./ExpenseTable.js";
 

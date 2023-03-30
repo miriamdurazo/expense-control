@@ -46,9 +46,9 @@ export const Converter = () => {
   }, [fromCurrency, toCurrency]);
   
   return(
-    <div className="container w-80 bg-white shadow rounded my-5">
-      <div className="row">
-        <div className="col-lg-6 mx-auto">
+    <div className="container">
+      <div className="row1">
+        <div className="col-1">
           <img
             id="exchangeImg"
             src={exchangeIcon}
@@ -68,7 +68,7 @@ export const Converter = () => {
             <h2 className="rate-data">{secondAmount} {toCurrency.substring(0,3)}</h2>
             <p className="data-info">{date} {time}</p>
           
-            <div className="row">
+            <div className="row p-3 flex justify-center content-center">
               <div className="col-lg-10 col-md-10 col-sm-10">
                 <SelectOptions
                   amount={firstAmount}
@@ -91,8 +91,8 @@ export const Converter = () => {
                   onChangeCurrency={(e) => setToCurrency(e.target.value)}
                 />
               </div>
-              <div className="col-lg-2 col-md-2 col-sm-2 align-self-center">
-                <button className="button" id="swap1" onClick={handleSwitch}>
+              <div className="col-lg-2 ml-4 col-md-2 col-sm-2">
+                <button className="text-white bg-[#ff884a] px-[0.75rem] py-[0.375rem] text-[1rem] leading-6 rounded-full hover:bg-[#f55d0c]" onClick={handleSwitch}>
                   Swap
                 </button>
               </div>
