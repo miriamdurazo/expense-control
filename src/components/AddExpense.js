@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { ExpensesContext } from '../contexts/ExpensesContext';
 import { v4 as uuidV4 } from 'uuid';
 import Chart from 'chart.js/auto';
+import {CategoryScale} from 'chart.js'; 
 
 // Style
 import '../styles/expenses.css'
@@ -11,6 +12,7 @@ export const AddExpense = () => {
   const { dispatch } = useContext(ExpensesContext);
   const [category, setCategory] = useState('');
   const [amount, setAmount] = useState('0');
+  console.log(Chart.register(CategoryScale));
   
   function handleSubmitExpense(e) {
     e.preventDefault();
