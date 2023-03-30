@@ -34,7 +34,7 @@ export const Income = () => {
         <input
           type="text"
           name="price"
-          id="price"
+          id="price" 
           class="block w-full rounded-md border-1 py-1.5 ps-8  pr-20 text-black-900 ring-1 ring-inset ring-indigo-600 focus:ring-2 focus:ring-inset focus:ring-indigo-800 sm:text-lg sm:leading-6"
            onChange={(e) => setIncome(e.target.value)}
         />
