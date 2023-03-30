@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { TiDelete } from 'react-icons/ti';
 import { FaMinusCircle } from "react-icons/fa";
 import { ExpensesContext } from '../contexts/ExpensesContext.js';
 

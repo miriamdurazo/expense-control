@@ -7,6 +7,7 @@ import { AddExpense } from '../components/AddExpense';
 import { ExpenseTotal } from '../components/ExpenseTotal.js';
 import { PracticeGraph } from '../components/PracticeGraph';
 import { Converter } from '../components/Converter';
+/*import { TotalLeft } from '../components/TotalLeft';*/
 
 export const Home = () => {
   return (
