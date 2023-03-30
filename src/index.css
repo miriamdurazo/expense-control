@@ -105,6 +105,145 @@ nav {
 
 /* Hero - end section */
 
+/* Total Left - start section */
+
+.totalLeftCol{
+  height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+}
+
+.h2El1,
+.h2El2 {
+  font-size: 45px;
+  font-weight: 600px;
+}
+.h3El {
+  font-size: 20px;
+}
+.totalLeft {
+  background-color: #e8833a;
+  padding: 3.5rem 7.5rem;
+  font-size: 3rem;
+  line-height: 1rem;
+  border-radius: 9999px;
+  margin: 2rem 0;
+  align-items: center;
+  color: white;
+}
+
+.currencyBtn {
+  background-color: #1aae9f;
+  padding: 3.5rem 7.5rem;
+  font-size: 3rem;
+  line-height: 1rem;
+  border-radius: 9999px;
+  margin: 2rem 0;
+  align-items: center;
+  color: white;
+}
+
+.currencyBtn:hover {
+  background-color: #a9d8d3;
+}
+/* Total Left - end section */
+
+/* Exchange Calculator - start section */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.row1 {
+  padding: .75rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#exchangeImg {
+  width: 350px;
+}
+  
+.exchange-title {
+  margin-top: -90px;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #ff884a;
+  text-align: center;
+}
+
+.exchange-p {
+  padding: .75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+  padding: .5rem;
+  margin-left: 1rem;
+  border: 1px solid #dedede;
+  background: transparent;
+  border-radius: .3em;
+}
+
+#amount {
+  padding: .5rem;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  border: 1px solid #dedede;
+  background: transparent;
+  text-align: right;
+  border-radius: .3em;
+  margin: .75rem;
+}
+  
+.rate {
+  color: #ff884a;
+  font-size: 14px;
+  margin-left: 2rem;
+  text-align: right;
+}
+  
+.base-data {
+  font-size: 17px;
+  color: #000;
+  font-weight: 500;
+}
+  
+.rate-data {
+  font-size: x-large;
+  color: #ff884a;
+  font-weight: 700;
+}
+  
+.data-info {
+  font-size: 13px;
+  color: #000;
+  font-weight: 600;
+}
+  
+select:focus,
+input:focus,
+button:focus {
+  outline: 0;
+}
+  
+@media (max-width: 600px) {
+  #amout {
+    width: 200px;
+  }
+}
+
+/* Exchange Calculator - end section */
+
 /* Footer - start section */
 
 .footer {

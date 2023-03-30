@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { ExpensesContext } from '../contexts/ExpensesContext';
 import { v4 as uuidV4 } from 'uuid';
+import Chart from 'chart.js/auto';
 
 // Style
 import '../styles/expenses.css'

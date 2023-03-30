@@ -1,5 +1,3 @@
-import React, {useContext} from 'react';
-import { ExpensesContext } from '../contexts/ExpensesContext.js';
 
 const IncomePercentile = () => {
     const { income } = useContext(ExpensesContext);
