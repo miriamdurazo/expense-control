@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Expense Control
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## User story:
+As a user, I want an app to display my income and expenses in different categories: Miscellaneous, Transport, Groceries, Eating out, Shopping, Housing, Utility bills, Broadband and Entertainment. I also want to be able to add new categories, modify my income and budget and see my remaining for each month.
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## Description:
+Expense control makes your finances easier to manage: with a user friendly design, you can fill in the existing expenses categories, add new ones or delete those that you no longer need. Also, you can see the percentage of spending displayed in a graph. You can also see in what percentile is your income, and compare different exchange rates to save your remaining of the month for your next holiday or to send money to someone abroad.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Instructions:
+1. Type your income and hit enter
+2. Repeat step 1 with the 'Budget' category
+3. Add your expenses by slecting the number on the dropdown menu and click the '+' button
+4. If you want to delete a category, click on the 'X' next to the '+'
+5. If you wish to add new categories, scroll down to the 'Add category' section and type the category name and amount and click 'Add'
+6. To use the Exchange rate tool, select the amount and the currency type and see the amount reflected.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![usagegif](./src/assets/images/demo.gif)
 
-### `npm test`
+## Technologies used:
+1. React
+2. Tailwind (CSS)
+3. CanvaPro
+4. Chart.js
+5. FortAwesome Icons
+6. Exchange Icons
+7. Exchange Rate API: https://exchangeratesapi.io/
+8. Whimsical (Wireframimng)
+9. Netlify 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Presentation link:
+https://docs.google.com/presentation/d/1yl1tWCMvxdy6g1ba3PkoSBLXBbXINv4NDgr6g3QxUfI/edit#slide=id.g29f43f0a72_0_0
 
-### `npm run build`
+## Resources:
+1. YouTube
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Acknowledgments 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for all the TAs for all the support provided
