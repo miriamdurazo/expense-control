@@ -31,10 +31,11 @@ const ExpenseCostInput = (props) => {
         
 		<form onSubmit={handleExpenseCostInput}>
             
-            <span className='text-sm text-gray-500 truncate dark:text-gray-600'>£</span>
-            <input
+            <span className='text-sm text-gray-500 truncate dark:text-gray-600 pr-1'>£</span>
+            <input className='w-64 rounded-md border-0 py-1.5 pl-2 pr-2 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6'
             type="number"
-            defaultValue={props.cost}
+            // defaultValue={props.cost}
+			placeholder='0.00'
             onChange={(e) => setCost(e.target.value)}
             />
             <span>

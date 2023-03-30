@@ -9,7 +9,7 @@ import '../styles/expenses.css'
 
 
 
-const ExpenseList = () => {
+export const ExpenseList = () => {
 	const { expenses } = useContext(ExpensesContext);
 
 	const [filteredExpenses, setfilteredExpenses] = useState(expenses || []);
@@ -64,5 +64,3 @@ const ExpenseList = () => {
 		</>
 	);
 };
-
-export default ExpenseList;

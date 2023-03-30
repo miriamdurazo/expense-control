@@ -7,12 +7,6 @@ import { ExpensesProvider } from "./contexts/ExpensesContext.js";
 import { Navbar } from "./components/Navbar";
 import { Wrapper } from "./components/Wrapper";
 import { Footer } from "./components/Footer";
-import { Hero } from "./components/Hero";
-import PracticeGraph from './components/PracticeGraph.js';
-import AddExpense from "./components/AddExpense.js";
-import ExpenseList from "./components/ExpenseList.js";
-import { Budget } from "./components/Budget.js";
-import { Income } from "./components/Income.js";
 
 // Pages
 import { Home } from "./pages/Home";
@@ -21,6 +15,7 @@ import { Contact } from "./pages/Contact";
 
 // Style
 import "./index.css";
+import './styles/expenses.css';
 
 function App() {
   return (
@@ -28,12 +23,6 @@ function App() {
       <Router>
         <div>
           <Navbar />
-          <Hero />
-          <Budget />
-          <Income />
-          <ExpenseList />
-          <AddExpense />
-          <PracticeGraph />
           <Wrapper>
             <Routes>
               <Route path="/" element={<Home />} />

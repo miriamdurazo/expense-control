@@ -93,17 +93,124 @@ nav {
 .hero-row {
   max-width: 100%;
   display: flex;
-  justify-content:center;
-  align-items:flex-end;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 #heroImg {
   margin-top: 5.5rem;
   max-width: 49%;
-  background-size:cover;
+  background-size: cover;
 }
 
 /* Hero - end section */
+
+/* Exchange Calculator - start section */
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+  padding: 20px;
+}
+  
+#exchangeImg {
+  width: 350px;
+}
+  
+.exchange-title {
+  color: #ff884a;
+  margin-top: -90px;
+  text-align: center;
+}
+  
+.exchange-p,
+.row {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.column-rates {
+  margin-bottom: .5rem;
+}
+
+select {
+  padding: .5rem;
+  margin-left: 1rem;
+  border: 1px solid #dedede;
+  background: transparent;
+  border-radius: .3em;
+}
+  
+.input {
+  padding: .5rem 2rem;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+  
+#swap1 {
+  color: white;
+  background-color: #ff884a;
+  cursor: pointer;
+  border-radius: .3em;
+  font-size: 12px;
+  padding: 5px 12px;
+  margin: 1rem; 
+}
+  
+#amount {
+  padding: .5rem;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  border: 1px solid #dedede;
+  background: transparent;
+  text-align: right;
+  border-radius: .3em;
+}
+  
+.rate {
+  color: #ff884a;
+  font-size: 14px;
+  margin-left: 2rem;
+  text-align: right;
+}
+  
+.base-data {
+  font-size: 17px;
+  color: #000;
+  font-weight: 500;
+}
+  
+.rate-data {
+  font-size: x-large;
+  color: #ff884a;
+  font-weight: 700;
+}
+  
+.data-info {
+  font-size: 13px;
+  color: #000;
+  font-weight: 600;
+}
+  
+select:focus,
+input:focus,
+button:focus {
+  outline: 0;
+}
+  
+@media (max-width: 600px) {
+  #amout {
+    width: 200px;
+  }
+}
+
+/* Exchange Calculator - end section */
 
 /* Footer - start section */
 
