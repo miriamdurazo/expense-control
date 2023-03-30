@@ -29,6 +29,9 @@ Expense control makes your finances easier to manage: with a user friendly desig
 8. Whimsical (Wireframimng)
 9. Netlify 
 
+## Presentation link:
+https://docs.google.com/presentation/d/1yl1tWCMvxdy6g1ba3PkoSBLXBbXINv4NDgr6g3QxUfI/edit#slide=id.g29f43f0a72_0_0
+
 ## Resources:
 1. YouTube
 
