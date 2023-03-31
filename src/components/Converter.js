@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import exchangeIcon from "../assets/images/exchangeIcon.gif";
-import SelectOptions from "./SelectOptions";
+import ConvertedAmount from "./ConvertedAmount";
+import SelectAmount from "./SelectAmount";
+import SelectOption from "./SelectOption";
 
 export const Converter = () => {
   const [fromCurrency, setFromCurrency] = useState("GBP - British Pound Sterling");
@@ -16,16 +18,16 @@ export const Converter = () => {
     setToCurrency(fromCurrency);
   };
 
-  const myHeaders = new Headers();
-  myHeaders.append("apikey", "3on336kylMg5q75MCYFfdTYZIbPujehUBROKEN");
-
-  const requestOptions = {
-    method: "GET",
-    redirect: "follow",
-    headers: myHeaders,
-  };
-
   useEffect(() => {
+    const myHeaders = new Headers();
+    myHeaders.append("apikey", "3on336kylMg5q75MCYFfdTYZIbPujehU");
+
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
+      headers: myHeaders,
+    };
+    
     const baseURL = "https://api.apilayer.com/exchangerates_data/latest";
     
       fetch(
@@ -34,69 +36,121 @@ export const Converter = () => {
       )
         .then((response) => response.json())
         .then((data) => {
+          const amountOne = document.getElementById("amount1").value;
           setExchangeRate(data.rates[toCurrency.substring(0,3)]);
-          setSecondAmount((firstAmount*(data.rates[toCurrency.substring(0,3)])).toFixed(4));
+          setSecondAmount((amountOne*(data.rates[toCurrency.substring(0,3)])).toFixed(4));
           setDate(new Date(data.date).toLocaleDateString());
           setTime(new Date(data.timestamp).toLocaleTimeString());
-          console.log(data);
-          console.log("Second amount" + secondAmount);
-          console.log("First amount" + firstAmount);
-          console.log("Exchange rate" + exchangeRate);
         });
   }, [fromCurrency, toCurrency]);
   
   return(
-    <div className="container">
-      <div className="row1">
-        <div className="col-1">
-          <img
+    <div className="mb-8">
+      <div className="flex flex-row">
+        <div className='pt-12 pl-4 flex flex-col rounded-md max-w-sm bg-gray-200'>
+          <h3 className='mb-8 text-2xl'>Input Options</h3>
+          <label className='mb-4'>
+            Select base currency for conversion:
+              <SelectOption
+                selectedCurrency={fromCurrency}
+                onChangeCurrency={(e) => {
+                  setFromCurrency(e.target.value)
+                  }
+                }
+              />
+          </label>
+          <label className='mb-4'>
+            Select target currency to convert to:
+              <SelectOption  
+                selectedCurrency={toCurrency}
+                onChangeCurrency={(e) => setToCurrency(e.target.value)}
+              />
+          </label>
+          <label className="mb-8">
+            Select the amount to be converted:
+              <SelectAmount 
+                amount={firstAmount}
+                isdisable={false}
+                onChangeAmount={(e) => {
+                  setFirstAmount(e.target.value)
+                  setSecondAmount((e.target.value*exchangeRate).toFixed(4))
+                  }
+                }
+              />
+          </label>
+
+          <div className="flex pr-4 justify-center mb-8">
+            <div className='py-2 pl-2'>
+              <button className='w-40 py-2 bg-blue-800 rounded-full text-white font-semibold' onClick={handleSwitch}>Swap currencies</button>
+            </div>
+          </div>
+
+          <hr className="mb-8"/>
+
+          <label className="mb-4">
+            This is your converted amount:
+              <ConvertedAmount
+                amount={secondAmount}
+                isdisable={true}
+              />
+          </label>
+        </div>
+      
+        <div className='pl-24 flex flex-col'>
+          <img  className="w-[350px]"
             id="exchangeImg"
             src={exchangeIcon}
             alt="your finances at one place"
           />
-          <h1 className="exchange-title">
-            Currency Converter
-            <br />&<br />
-            Exchange Rates
+          <h1 className="text-3xl py-4 mb-4 text-blue-800 -mt-20 font-semibold">
+            Currency Converter & Exchange Rates
           </h1>
-          <p className="exchange-p">
-            Choose the currency and the amount to get up-to-date rates
-          </p>
-
-          <div className="card card-body">
-            <h5 className="base-data">{firstAmount} {fromCurrency.substring(0,3)} is equivalent to</h5>
-            <h2 className="rate-data">{secondAmount} {toCurrency.substring(0,3)}</h2>
-            <p className="data-info">{date} {time}</p>
+          <h2 className="mb-4 text-xl font-bold">
+            Currency conversion
+          </h2>
+          <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+            <table className="bg-white divide-y divide-gray-200">
+              <thead className="bg-gray-200">
+                <tr>
+                  <th className="px-10 py-2 text-right text-gray-400 text-md font-light tracking-wider"></th>
+                  <th className="px-4 py-2 text-right text-gray-400 text-md font-light tracking-wider">
+                    base_currency
+                  </th>
+                  <th className="px-4 py-2 text-right text-gray-400 text-md font-light tracking-wider">
+                    converted_currency
+                  </th>
+                  <th className="px-4 py-2 text-right text-gray-400 text-md font-light tracking-wider">
+                    input_amount
+                  </th>
+                  <th className="px-4 py-2 text-right text-gray-400 text-md font-light tracking-wider">
+                    converted_amount
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="bg-white divide-y divide-gray-200">
+                <th className="px-10 py-2 text-right bg-gray-200 text-gray-400 text-md font-light tracking-wider"></th>
+                <th className="px-4 py-2 text-right text-md font-light tracking-wider">
+                  {fromCurrency}
+                </th>
+                <th className="px-4 py-2 text-right text-md font-light tracking-wider">
+                  {toCurrency}
+                </th>
+                <th className="px-4 py-2 text-right text-md font-light tracking-wider">
+                  {firstAmount}
+                </th>
+                <th className="px-4 py-2 text-right text-md font-light tracking-wider">
+                  {secondAmount}
+                </th>
+              </tbody>
+            </table>
+          </div>
           
-            <div className="row p-3 flex justify-center content-center">
-              <div className="col-lg-10 col-md-10 col-sm-10">
-                <SelectOptions
-                  amount={firstAmount}
-                  isdisable={false}
-                  onChangeAmount={(e) => {
-                    setFirstAmount(e.target.value)
-                    setSecondAmount((e.target.value*exchangeRate).toFixed(4))
-                    }
-                  }
-                  selectedCurrency={fromCurrency}
-                  onChangeCurrency={(e) => {
-                    setFromCurrency(e.target.value)
-                    }
-                  }
-                />
-                <SelectOptions
-                  amount={secondAmount}
-                  isdisable={true}
-                  selectedCurrency={toCurrency}
-                  onChangeCurrency={(e) => setToCurrency(e.target.value)}
-                />
-              </div>
-              <div className="col-lg-2 ml-4 col-md-2 col-sm-2">
-                <button className="text-white bg-[#ff884a] px-[0.75rem] py-[0.375rem] text-[1rem] leading-6 rounded-full hover:bg-[#f55d0c]" onClick={handleSwitch}>
-                  Swap
-                </button>
-              </div>
-            </div>
+          <div className="mt-16">
+            <h3 className="mb-4"><strong>About</strong></h3>
+            <ul>
+              <li><strong>Data source:</strong> <a href='https://exchangeratesapi.io/'>Exchange Rates API</a> which delivers real-time currency exchange rate data.</li>
+              <li><strong>Last updated in:</strong> {date} {time}</li>
+            </ul>
           </div>
         </div>
       </div>
