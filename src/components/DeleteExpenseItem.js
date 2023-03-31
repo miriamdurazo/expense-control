@@ -14,10 +14,7 @@ const DeleteExpenseItem = (props) => {
 
 	return (
         
-		<button onClick={handleDeleteExpense}>
-        	<FaMinusCircle size='1.15em' style={{color: 'red'}} />
-		</button>
-		
+		<FaMinusCircle size='1.15em' style={{color: 'red'}} onClick={handleDeleteExpense}/>
         
 	);
 };

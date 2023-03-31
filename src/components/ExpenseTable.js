@@ -16,10 +16,10 @@ function ExpenseTable() {
             <table className="min-w-full divide-y divide-gray-200">
               <thead className="bg-blue-800">
                 <tr>
-                  <th className="group px-6 py-3 text-left text-lg font-semibold text-slate-200 uppercase tracking-wider">
+                  <th className="group px-10 py-3 text-left text-lg font-semibold text-slate-200 uppercase tracking-wider">
                     Category
                   </th>
-                  <th className="px-6 py-3 text-left text-lg font-semibold text-slate-200 uppercase tracking-wider">
+                  <th className="px-8 py-3 text-left text-lg font-semibold text-slate-200 uppercase tracking-wider">
                     Cost (£)
                   </th>
                   <th className="px-2 py-3 text-left text-lg font-semibold text-slate-200 uppercase tracking-wider"></th>
@@ -28,17 +28,17 @@ function ExpenseTable() {
               <tbody className="bg-white divide-y divide-gray-200">
                 {expenses.map((expense) => (
                   <tr key={expense.id}>
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-10 py-4 whitespace-nowrap">
                       {expense.name}
                     </td>
                     {/* <td className="px-6 py-4 whitespace-nowrap">
                       <input type="number" defaultValue={expense.cost} />
                     </td> */}
-                    <td className="px-6 py-4 whitespace-nowrap">
+                    <td className="px-8 py-4 whitespace-nowrap">
                       <ExpenseCostInput id={expense.id} name={expense.name} cost={expense.cost} />
                     </td>
-                    <td>
-                      <DeleteExpenseItem />
+                    <td className="px-2 py-4 whitespace-nowrap">
+                      <DeleteExpenseItem  id={expense.id} />
                     </td>
                   </tr>
                 ))}

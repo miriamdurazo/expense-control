@@ -12,7 +12,8 @@ const AppReducer = (state, action) => {
                 expensesTotal: state.expensesTotal + action.payload.cost,
             }
             
-        case 'DELETE_EXPENSE':{
+        case 'DELETE_EXPENSE':
+          {
           const deletedExpense = state.expenses.find((expense) => expense.id === action.payload);
             return {
                 ...state, 
@@ -46,7 +47,6 @@ const AppReducer = (state, action) => {
             ...state, 
             budget: action.payload,
           }
-
           
         case 'ADD_INCOME':
           return {

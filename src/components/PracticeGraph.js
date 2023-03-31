@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Bar } from "react-chartjs-2";
 import { ExpensesContext } from "../contexts/ExpensesContext.js";
 
@@ -6,15 +6,15 @@ import { ExpensesContext } from "../contexts/ExpensesContext.js";
 export const PracticeGraph = () => {
   const { expenses } = useContext(ExpensesContext);
   
-  // console.log(`This is the expenses array? ${JSON.stringify(expenses)}`);
+  console.log(`This is the expenses array ${JSON.stringify(expenses)}`);
   
   // Get the expenses category labels
   const labels = expenses.map(expense => expense.name);
-  // console.log(`The labels are ${labels}`);
-  
+  console.log(`The labels are ${labels}`);
+
   // Get the expenses costs
   const dataPoints = expenses.map(expense => expense.cost);
-  // console.log(`The data points are ${dataPoints}`);
+  console.log(`The data points are ${dataPoints}`);
   
   const data = {
     labels: labels,
@@ -47,9 +47,29 @@ export const PracticeGraph = () => {
       },
     ],
   };
+
+  const options = {
+    scales: {
+      x: {
+        type: 'category',
+        title: {
+          display: false,
+          text: 'Category',
+        },
+      },
+      y: {
+        title: {
+          display: true,
+          text: 'Expense amount (£)',
+        },
+      },
+    },
+  };
+
   return (
     <div>
-      <Bar data={data} />
+      <Bar data={data} options={options}/>
     </div>
   );
 };
+
