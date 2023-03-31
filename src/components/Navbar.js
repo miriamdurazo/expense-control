@@ -9,16 +9,19 @@ export class Navbar extends Component {
   render() {
     return (
       <nav>
+        <div className='flex'>
         <a href='canvaLogo' to='/'>
           <img id='logo' src={ logo } alt='expense control logo' />
         </a>
+        <h1 className='text-2xl pt-1'>Expense Control</h1>
+        </div>
         
         {/* Menu */}
         <div>
           <ul id='navbar' className={this.state.clicked ? '#navbar active' : 'navbar'}>
             <Link href='home' to='/' className='navLink'>Home</Link>
             <Link href='expenseChart' to='#expenseChart' className='navLink'>Expense Chart</Link>
-            <Link href='currency' to='#currecy' className='navLink'>Currency</Link>
+            <Link href='currency' to='#currency' className='navLink'>Currency</Link>
             <Link href='contact' to='/contact' className='navLink'>Contact us</Link>
           </ul>
         </div>

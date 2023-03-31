@@ -45,7 +45,7 @@ export const Converter = () => {
   }, [fromCurrency, toCurrency]);
   
   return(
-    <div className="mb-8">
+    <div className="mb-8" id="currency">
       <div className="flex flex-row">
         <div className='pt-12 pl-4 flex flex-col rounded-md max-w-sm bg-gray-200'>
           <h3 className='mb-8 text-2xl'>Input Options</h3>
@@ -81,7 +81,7 @@ export const Converter = () => {
 
           <div className="flex pr-4 justify-center mb-8">
             <div className='py-2 pl-2'>
-              <button className='w-40 py-2 bg-blue-800 rounded-full text-white font-semibold' onClick={handleSwitch}>Swap currencies</button>
+              <button className='w-40 py-2 bg-[#e8833a] rounded-full text-white font-semibold' onClick={handleSwitch}>Swap currencies</button>
             </div>
           </div>
 
@@ -102,7 +102,7 @@ export const Converter = () => {
             src={exchangeIcon}
             alt="your finances at one place"
           />
-          <h1 className="text-3xl py-4 mb-4 text-blue-800 -mt-20 font-semibold">
+          <h1 className="text-3xl py-4 mb-4 text-[#e8833a] -mt-20 font-semibold">
             Currency Converter & Exchange Rates
           </h1>
           <h2 className="mb-4 text-xl font-bold">
