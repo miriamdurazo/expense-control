@@ -16,16 +16,16 @@ export const Converter = () => {
     setToCurrency(fromCurrency);
   };
 
-  const myHeaders = new Headers();
-  myHeaders.append("apikey", "3on336kylMg5q75MCYFfdTYZIbPujehUBROKEN");
-
-  const requestOptions = {
-    method: "GET",
-    redirect: "follow",
-    headers: myHeaders,
-  };
-
   useEffect(() => {
+    const myHeaders = new Headers();
+    myHeaders.append("apikey", "3on336kylMg5q75MCYFfdTYZIbPujehUBROKEN");
+
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
+      headers: myHeaders,
+    };
+    
     const baseURL = "https://api.apilayer.com/exchangerates_data/latest";
     
       fetch(
@@ -38,10 +38,6 @@ export const Converter = () => {
           setSecondAmount((firstAmount*(data.rates[toCurrency.substring(0,3)])).toFixed(4));
           setDate(new Date(data.date).toLocaleDateString());
           setTime(new Date(data.timestamp).toLocaleTimeString());
-          console.log(data);
-          console.log("Second amount" + secondAmount);
-          console.log("First amount" + firstAmount);
-          console.log("Exchange rate" + exchangeRate);
         });
   }, [fromCurrency, toCurrency]);
   
