@@ -5,14 +5,14 @@ import { AddExpense } from '../components/AddExpense';
 import { ExpenseTotal } from '../components/ExpenseTotal.js';
 import { PracticeGraph } from '../components/PracticeGraph';
 import { Converter } from '../components/Converter';
-import { IncomeExpensesBudget } from '../components/IncomeExpensesBudget';
+import { IncomeBudget } from '../components/IncomeBudget';
 /*import { TotalLeft } from '../components/TotalLeft';*/
 
 export const Home = () => {
   return (
     <div name='home'>
       <Hero />
-      <IncomeExpensesBudget />
+      <IncomeBudget />
       <ExpenseList />
       <AddExpense />
       <ExpenseTotal />
